@@ -3,6 +3,7 @@ parameters:
     paths:
         - core
         - app
+        - database
     excludePaths:
         - vendor
     reportUnmatchedIgnoredErrors: false

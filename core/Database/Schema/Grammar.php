@@ -6,9 +6,6 @@ namespace Core\Database\Schema;
 
 class Grammar
 {
-    /** @var string[] */
-    private array $statements = [];
-
     public function compileCreate(Blueprint $blueprint): string
     {
         $table = $blueprint->getTable();
