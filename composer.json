@@ -1,0 +1,41 @@
+{
+    "name": "velo/php",
+    "description": "VeloPHP — Micro-framework PHP moderno, rápido e elegante",
+    "type": "project",
+    "license": "MIT",
+    "keywords": ["velophp", "framework", "micro-framework", "php", "router", "migrations"],
+    "authors": [
+        {
+            "name": "VeloPHP",
+"homepage": "https://github.com/ens-Emilio/VeloPHP"
+
+    },
+    "support": {
+        "issues": "https://github.com/ens-Emilio/VeloPHP/issues",
+        "source": "https://github.com/ens-Emilio/VeloPHP"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        },
+        "files": [
+            "core/helpers.php"
+        ]
+    },
+    "require": {
+        "php": ">=8.2",
+        "vlucas/phpdotenv": "^5.6",
+        "psr/container": "^2.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "*",
+        "phpstan/phpstan": "*",
+        "laravel/pint": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

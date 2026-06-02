@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloPHP — Micro-framework PHP moderno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">⚡ VeloPHP</a>
+        <div class="nav-links">
+            <a href="install.html">Instalar</a>
+            <a href="quickstart.html">Quickstart</a>
+            <a href="cli.html">CLI</a>
+            <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>⚡ VeloPHP</h1>
+        <p class="subtitle">Micro-framework PHP moderno, rápido e elegante. Rotas, migrations, CLI, ORM relacional e container DI — zero bloat.</p>
+        <div class="install-cmd">
+            <span>$</span> composer create-project velo/php meu-app
+        </div>
+        <div class="buttons">
+            <a href="install.html" class="btn btn-primary">Começar agora</a>
+            <a href="quickstart.html" class="btn btn-secondary">Quickstart</a>
+            <a href="https://github.com/ens-Emilio/VeloPHP" class="btn btn-secondary">GitHub</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Por que VeloPHP?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Rápido</h3>
+                    <p>Sem overhead desnecessário. Roteador leve, container com auto-resolução, zero magic strings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📦</div>
+                    <h3>Completo</h3>
+                    <p>Migrations, seeders, schema builder, relacionamentos, soft deletes, validação, views, cache, auth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔧</div>
+                    <h3>CLI Poderoso</h3>
+                    <p>25+ comandos: <code>serve</code>, <code>make:*</code>, <code>migrate</code>, <code>route:list</code> e mais.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Seguro</h3>
+                    <p>CSRF, security headers, rate limiting, CORS configurável, SQL injection prevention via PDO bindings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🧩</div>
+                    <h3>Modular</h3>
+                    <p>Service providers, middleware pipeline, eventos, container PSR-11 com auto-resolução via Reflection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Testado</h3>
+                    <p>87+ testes (Pest), PHPStan level, Pint style, CI em 3 versões do PHP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" style="padding-top:0">
+        <div class="container">
+            <h2>3 passos para começar</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1. Instale</h3>
+                    <p><code>composer create-project velo/php meu-app</code></p>
+                </div>
+                <div class="feature-card">
+                    <h3>2. Configure</h3>
+                    <p><code>cp .env.example .env</code> e edite suas credenciais</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3. Sirva</h3>
+                    <p><code>php velo serve</code> e acesse localhost:8000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>MIT License &copy; VeloPHP &mdash; <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a></p>
+    </footer>
+</body>
+</html>

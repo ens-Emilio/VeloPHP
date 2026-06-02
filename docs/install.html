@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalação — VeloPHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">⚡ VeloPHP</a>
+        <div class="nav-links">
+            <a href="install.html">Instalar</a>
+            <a href="quickstart.html">Quickstart</a>
+            <a href="cli.html">CLI</a>
+            <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1>Instalação</h1>
+            <p class="lead">Três formas de começar com VeloPHP.</p>
+
+            <h2>Pré-requisitos</h2>
+            <ul>
+                <li>PHP ≥ 8.2</li>
+                <li>PDO MySQL</li>
+                <li>Composer</li>
+            </ul>
+
+            <h2>Método 1: Composer create-project</h2>
+            <pre><code>composer create-project velo/php meu-app
+cd meu-app
+cp .env.example .env
+php velo serve</code></pre>
+
+            <h2>Método 2: Instalador interativo</h2>
+            <pre><code>php -r "copy('https://raw.githubusercontent.com/ens-Emilio/VeloPHP/main/installer/create.php', 'create-velophp');" && php create-velophp</code></pre>
+
+            <h2>Método 3: GitHub clone</h2>
+            <pre><code>git clone https://github.com/ens-Emilio/VeloPHP.git meu-app
+cd meu-app
+composer install
+cp .env.example .env
+php velo serve</code></pre>
+
+            <h2>Configuração do ambiente</h2>
+            <p>Edite o arquivo <code>.env</code> com suas configurações:</p>
+            <pre><code>DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=velophp
+DB_USERNAME=root
+DB_PASSWORD=</code></pre>
+
+            <h2>Verifique a instalação</h2>
+            <pre><code>php velo test
+php velo route:list
+php velo db:test</code></pre>
+        </div>
+    </section>
+
+    <footer>
+        <p>MIT License &copy; VeloPHP &mdash; <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a></p>
+    </footer>
+</body>
+</html>

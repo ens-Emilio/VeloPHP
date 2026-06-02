@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickstart — VeloPHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">⚡ VeloPHP</a>
+        <div class="nav-links">
+            <a href="install.html">Instalar</a>
+            <a href="quickstart.html">Quickstart</a>
+            <a href="cli.html">CLI</a>
+            <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1>Quickstart</h1>
+            <p class="lead">Crie sua primeira rota, controller e migration em 5 minutos.</p>
+
+            <h2>1. Rota simples</h2>
+            <p>Edite <code>routes/web.php</code>:</p>
+            <pre><code><span class="keyword">&lt;?php</span>
+
+<span class="function">$router-&gt;get</span>(<span class="string">'/'</span>, <span class="keyword">function</span> () {
+    <span class="keyword">return</span> response()-&gt;json([<span class="string">'message'</span> => <span class="string">'Olá, VeloPHP!'</span>]);
+});</code></pre>
+
+            <h2>2. Controller</h2>
+            <pre><code>php velo make:controller UserController</code></pre>
+            <p>Edite <code>app/Controllers/UserController.php</code>:</p>
+            <pre><code><span class="keyword">public function</span> <span class="function">index</span>(): array
+{
+    <span class="keyword">return</span> [<span class="string">'users'</span> => []]; <span class="comment">// Ou DB::table('users')-&gt;get()</span>
+}</code></pre>
+            <p>Registre a rota:</p>
+            <pre><code><span class="function">$router-&gt;get</span>(<span class="string">'/users'</span>, [<span class="function">UserController::class</span>, <span class="string">'index'</span>]);</code></pre>
+
+            <h2>3. Migration</h2>
+            <pre><code>php velo make:migration create_users_table</code></pre>
+            <p>Edite o arquivo gerado em <code>database/migrations/</code>:</p>
+            <pre><code><span class="keyword">public function</span> <span class="function">up</span>(): <span class="keyword">void</span>
+{
+    Schema::create(<span class="string">'users'</span>, <span class="keyword">function</span> (Blueprint $table) {
+        $table-&gt;id();
+        $table-&gt;string(<span class="string">'name'</span>);
+        $table-&gt;string(<span class="string">'email'</span>)-&gt;unique();
+        $table-&gt;timestamps();
+    });
+}</code></pre>
+            <pre><code>php velo migrate</code></pre>
+
+            <h2>4. Próximos passos</h2>
+            <ul>
+                <li><a href="cli.html">Referência de comandos CLI</a></li>
+                <li>Explore os arquivos em <code>routes/</code> e <code>config/</code></li>
+                <li>Crie models com <code>php velo make:model</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>MIT License &copy; VeloPHP &mdash; <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Core\Console\Application;
+use Core\Console\Commands\Analyse;
+use Core\Console\Commands\CacheClear;
+use Core\Console\Commands\SetupCommand;
+use Core\Console\Commands\DbTest;
+use Core\Console\Commands\Lint;
+use Core\Console\Commands\MakeController;
+use Core\Console\Commands\MakeListener;
+use Core\Console\Commands\MakeMiddleware;
+use Core\Console\Commands\MakeProvider;
+use Core\Console\Commands\MakeRepository;
+use Core\Console\Commands\MakeView;
+use Core\Console\Commands\RouteCache;
+use Core\Console\Commands\RouteClear;
+use Core\Console\Commands\RouteList;
+use Core\Console\Commands\Serve;
+use Core\Console\Commands\Test;
+use Core\Console\Commands\DbSeedCommand;
+use Core\Console\Commands\MakeMigrationCommand;
+use Core\Console\Commands\MakeSeederCommand;
+use Core\Console\Commands\MigrateCommand;
+use Core\Console\Commands\MigrateFreshCommand;
+use Core\Console\Commands\MigrateResetCommand;
+use Core\Console\Commands\MigrateRollbackCommand;
+
+$console = new Application(basePath: __DIR__);
+
+// Registra comandos
+$console->register(new Serve());
+$console->register(new RouteList($console));
+$console->register(new RouteCache($console));
+$console->register(new RouteClear($console));
+$console->register(new MakeController($console));
+$console->register(new MakeMiddleware($console));
+$console->register(new MakeProvider($console));
+$console->register(new MakeRepository($console));
+$console->register(new MakeListener($console));
+$console->register(new MakeView($console));
+$console->register(new CacheClear($console));
+$console->register(new DbTest($console));
+$console->register(new MigrateCommand($console));
+$console->register(new MigrateRollbackCommand($console));
+$console->register(new MigrateResetCommand($console));
+$console->register(new MigrateFreshCommand($console));
+$console->register(new MakeMigrationCommand($console));
+$console->register(new MakeSeederCommand($console));
+$console->register(new DbSeedCommand($console));
+$console->register(new Test());
+$console->register(new SetupCommand());
+$console->register(new Analyse());
+$console->register(new Lint());
+
+exit($console->run($argv));

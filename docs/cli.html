@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI Reference — VeloPHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">⚡ VeloPHP</a>
+        <div class="nav-links">
+            <a href="install.html">Instalar</a>
+            <a href="quickstart.html">Quickstart</a>
+            <a href="cli.html">CLI</a>
+            <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1>CLI Reference</h1>
+            <p class="lead">Todos os comandos disponíveis no VeloPHP.</p>
+
+            <h2>Servidor</h2>
+            <table class="cmd-table">
+                <tr><th>Comando</th><th>Descrição</th></tr>
+                <tr><td>php velo serve</td><td>Inicia servidor de desenvolvimento</td></tr>
+            </table>
+
+            <h2>Database / Migrations</h2>
+            <table class="cmd-table">
+                <tr><th>Comando</th><th>Descrição</th></tr>
+                <tr><td>php velo migrate</td><td>Executa migrations pendentes</td></tr>
+                <tr><td>php velo migrate --pretend</td><td>Mostra SQL sem executar</td></tr>
+                <tr><td>php velo migrate:rollback</td><td>Reverte último batch</td></tr>
+                <tr><td>php velo migrate:reset</td><td>Reverte todas as migrations</td></tr>
+                <tr><td>php velo migrate:fresh</td><td>Dropa tabelas e executa do zero</td></tr>
+                <tr><td>php velo migrate:fresh --seed</td><td>Fresh + seed</td></tr>
+                <tr><td>php velo db:seed</td><td>Executa seeders</td></tr>
+                <tr><td>php velo db:seed --class=UserSeeder</td><td>Executa seeder específico</td></tr>
+                <tr><td>php velo db:test</td><td>Testa conexão com banco</td></tr>
+            </table>
+
+            <h2>Make (Geradores)</h2>
+            <table class="cmd-table">
+                <tr><th>Comando</th><th>Descrição</th></tr>
+                <tr><td>php velo make:migration create_users_table</td><td>Cria migration</td></tr>
+                <tr><td>php velo make:seeder UserSeeder</td><td>Cria seeder</td></tr>
+                <tr><td>php velo make:controller UserController</td><td>Cria controller</td></tr>
+                <tr><td>php velo make:model User</td><td>Cria model</td></tr>
+                <tr><td>php velo make:middleware AuthMiddleware</td><td>Cria middleware</td></tr>
+                <tr><td>php velo make:provider AppServiceProvider</td><td>Cria service provider</td></tr>
+                <tr><td>php velo make:repository UserRepository</td><td>Cria repository</td></tr>
+                <tr><td>php velo make:listener SendEmail</td><td>Cria event listener</td></tr>
+                <tr><td>php velo make:view index</td><td>Cria view</td></tr>
+            </table>
+
+            <h2>Routes</h2>
+            <table class="cmd-table">
+                <tr><th>Comando</th><th>Descrição</th></tr>
+                <tr><td>php velo route:list</td><td>Lista todas as rotas</td></tr>
+                <tr><td>php velo route:cache</td><td>Cache de rotas</td></tr>
+                <tr><td>php velo route:clear</td><td>Limpa cache de rotas</td></tr>
+            </table>
+
+            <h2>Cache</h2>
+            <table class="cmd-table">
+                <tr><th>Comando</th><th>Descrição</th></tr>
+                <tr><td>php velo cache:clear</td><td>Limpa cache</td></tr>
+            </table>
+
+            <h2>Quality</h2>
+            <table class="cmd-table">
+                <tr><th>Comando</th><th>Descrição</th></tr>
+                <tr><td>php velo test</td><td>Executa testes (Pest)</td></tr>
+                <tr><td>php velo lint</td><td>Verifica estilo (Pint)</td></tr>
+                <tr><td>php velo analyse</td><td>Análise estática (PHPStan)</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>MIT License &copy; VeloPHP &mdash; <a href="https://github.com/ens-Emilio/VeloPHP">GitHub</a></p>
+    </footer>
+</body>
+</html>
