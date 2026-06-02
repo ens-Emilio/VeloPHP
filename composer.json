@@ -29,9 +29,9 @@
         "psr/container": "^2.0"
     },
     "require-dev": {
-        "pestphp/pest": "*",
-        "phpstan/phpstan": "*",
-        "laravel/pint": "*"
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^1.0",
+        "laravel/pint": "^1.0"
     },
     "config": {
         "allow-plugins": {
