@@ -7,9 +7,9 @@
     "authors": [
         {
             "name": "VeloPHP",
-"homepage": "https://github.com/ens-Emilio/VeloPHP"
-
-    },
+            "homepage": "https://github.com/ens-Emilio/VeloPHP"
+        }
+    ],
     "support": {
         "issues": "https://github.com/ens-Emilio/VeloPHP/issues",
         "source": "https://github.com/ens-Emilio/VeloPHP"
